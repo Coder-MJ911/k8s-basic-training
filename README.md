@@ -37,9 +37,9 @@ AC:
 简述 kubectl log / describe / apply / delete 命令的功能
 ```html
 kubectl log:
-kubectl describe
-kubectl apply
-kubectl delete
+kubectl describe:
+kubectl apply:
+kubectl delete:
 ```
 将示例中的 Node.js 应用（或自定义其他工程）通过 Deployment 部署，经过Service组织后由Ingress暴露出可被访问的API（使用kubectl apply）
 
