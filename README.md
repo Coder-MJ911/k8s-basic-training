@@ -90,4 +90,10 @@ kubectl delete service --all
 
 How to delete a deployment by name:
 kubectl delete deployment k8s-deployment
+
+How to check deployment:
+kubectl get deployment
+
+How to check status of deployment:
+kubectl rollout status deployment/k8s-deployment
 ```
