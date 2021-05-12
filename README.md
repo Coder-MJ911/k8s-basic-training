@@ -58,7 +58,7 @@ kubectl delete pods,services -l name=myLabel --- Delete pods and services with l
 ```shell
 docker build -t myproject/myimage ./basic-express
 minikube start
-kubectl apply -f deployment-template.yml (OR kubectl create deployment k8s-deployment --image=myproject/myimage)
+kubectl apply -f K8S/ (OR kubectl create deployment k8s-deployment --image=myproject/myimage)
 kubectl expose deployment k8s-deployment --type=NodePort --port=8080
 kubectl get services k8s-deployment
 ```
