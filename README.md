@@ -36,10 +36,22 @@ AC:
 在本地安装 kubectl 命令行以及任意 k8s 运行环境（MiniKube / Docker Desktop / 其他）
 简述 kubectl log / describe / apply / delete 命令的功能
 ```html
-kubectl log:
-kubectl describe:
-kubectl apply:
-kubectl delete:
+kubectl logs: 在容器或指定资源中打印容器的日志。如果Pod只有一个容器，则容器名称是Optional的。
+eg:
+kubectl logs --tail=20 --- nginx Display only the most recent 20 lines of output in pod nginx
+
+kubectl describe: 打印所选资源的详细描述，包括相关资源，例如事件或控制器。您可以按名称选择单个对象，该类型的所有对象，提供名称前缀或标签选择器。
+eg：
+kubectl describe pods/nginx --- Describe a pod
+
+kubectl apply: 通过文件名或标准输入将配置应用于资源。必须指定资源名称。如果该资源尚不存在，则将创建它。
+eg：
+kubectl apply (-f FILENAME | -k DIRECTORY)
+
+kubectl delete: 按文件名，标准输入，资源和名称，或按资源和标签选择器删除资源。
+eg:
+kubectl delete pods,services -l name=myLabel --- Delete pods and services with label name=myLabel
+
 ```
 将示例中的 Node.js 应用（或自定义其他工程）通过 Deployment 部署，经过Service组织后由Ingress暴露出可被访问的API（使用kubectl apply）
 
