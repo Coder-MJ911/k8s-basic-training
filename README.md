@@ -55,6 +55,14 @@ kubectl delete pods,services -l name=myLabel --- Delete pods and services with l
 ```
 将示例中的 Node.js 应用（或自定义其他工程）通过 Deployment 部署，经过Service组织后由Ingress暴露出可被访问的API（使用kubectl apply）
 
+```shell
+docker build -t myproject/myimage ./basic-express
+minikube start
+kubectl apply -f deployment-template.yml (OR kubectl create deployment k8s-deployment --image=myproject/myimage)
+kubectl expose deployment k8s-deployment --type=NodePort --port=8080
+kubectl get services k8s-deployment
+```
+
 使用 kubectl get查看本地运行的所有pod，deployment，service，使用kubectl describe查看pod，deployment的详细信息
 
 使用 kubectl log 查看正在运行的pod的日志
@@ -68,3 +76,18 @@ AC:
 安装 k8s dashboard，通过 dashboard 进行扩容 / 收缩；使用kubectl scale命令对deployment进行扩容 / 收缩
 简单描述 Pod, Node, Deployment, Service, Ingress, ReplicaSet, Namespace 概念
 创建一个kubernetes cronjob（扩展 Node.js 应用或使用其他工程）
+
+
+
+
+Others Point:
+```shell
+How to delete all pod:
+kubectl delete pods --all
+
+How to delete all service:
+kubectl delete service --all
+
+How to delete a deployment by name:
+kubectl delete deployment k8s-deployment
+```
