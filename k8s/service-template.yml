@@ -3,6 +3,8 @@ kind: Service
 metadata:
   name: my-service
 spec:
+  selector:
+    app: first-k8s
   ports:
     - protocol: TCP
       port: 80
