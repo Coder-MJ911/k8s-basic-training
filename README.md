@@ -65,6 +65,16 @@ kubectl get services k8s-deployment
 ```
 
 使用 kubectl get查看本地运行的所有pod，deployment，service，使用kubectl describe查看pod，deployment的详细信息
+```html
+kubectl get pods [name]
+kubectl get service [name]
+kubectl get deployment [name]
+kubectl get ingress [name]
+kubectl describe pods [name]
+kubectl describe service [name]
+kubectl describe ingress [name]
+kubectl describe deployment [name]
+```
 
 使用 kubectl log 查看正在运行的pod的日志
 
