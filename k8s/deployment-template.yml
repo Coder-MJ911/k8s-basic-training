@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
         - name: first-k8s
-          image: coderjiajiema/k8simage:1.0
+          image: coderjiajiema/k8simage:2.0
           ports:
             - containerPort: 3000
