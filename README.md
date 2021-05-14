@@ -87,7 +87,7 @@ Forward one or more local ports to a pod:
 kubectl port-forward POD [LOCAL_PORT:]REMOTE_PORT [...[LOCAL_PORT_N:]REMOTE_PORT_N] [flags]
 
 eg:
-Listen on port 8888 on all addresses, forwarding to 5000 in the pod:
+Listen on port 8888 on localhost addresses, forwarding to 3000 in the pod:
 kubectl port-forward --address 127.0.0.1 pod/[pod-name] 8888:3000
 ```
 
