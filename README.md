@@ -112,6 +112,9 @@ kubectl scale --current-replicas=3 --replicas=4 deployment/k8s-deployment
 简单描述 Pod, Node, Deployment, Service, Ingress, ReplicaSet, Namespace 概念
 
 创建一个kubernetes cronjob（扩展 Node.js 应用或使用其他工程）
+```shell
+kubectl apply -f ./k8s/cronjob
+```
 
 
 
@@ -123,6 +126,9 @@ kubectl delete pods --all
 
 How to delete all service:
 kubectl delete service --all
+
+How to delete all cronjob:
+kubectl delete cronjob --all
 
 How to delete a deployment by name:
 kubectl delete deployment k8s-deployment
