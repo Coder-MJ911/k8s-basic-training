@@ -82,13 +82,35 @@ kubectl logs [pod-name]
 ```
 
 使用 kubectl port-forward 命令将本地请求直接转发到 pod
+```shell
+Forward one or more local ports to a pod:
+kubectl port-forward POD [LOCAL_PORT:]REMOTE_PORT [...[LOCAL_PORT_N:]REMOTE_PORT_N] [flags]
+
+eg:
+Listen on port 8888 on all addresses, forwarding to 5000 in the pod:
+kubectl port-forward --address 127.0.0.1 pod/[pod-name] 8888:3000
+```
 
 
 Advanced
 
 AC:
-安装 k8s dashboard，通过 dashboard 进行扩容 / 收缩；使用kubectl scale命令对deployment进行扩容 / 收缩
+安装 k8s dashboard，通过 dashboard 进行扩容 / 收缩:
+```shell
+minikube dashboard
+```
+```html
+click the deployment then click actions then scale this deployment
+```
+
+使用kubectl scale命令对deployment进行扩容 / 收缩:
+```shell
+If the deployment named k8s-deployment and current size is 3, scale it to 4:
+kubectl scale --current-replicas=3 --replicas=4 deployment/k8s-deployment
+```
+
 简单描述 Pod, Node, Deployment, Service, Ingress, ReplicaSet, Namespace 概念
+
 创建一个kubernetes cronjob（扩展 Node.js 应用或使用其他工程）
 
 
