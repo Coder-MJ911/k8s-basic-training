@@ -56,7 +56,7 @@ kubectl delete pods,services -l name=myLabel --- Delete pods and services with l
 将示例中的 Node.js 应用（或自定义其他工程）通过 Deployment 部署，经过Service组织后由Ingress暴露出可被访问的API（使用kubectl apply）
 
 ```shell
-eval $(minikube -p minikube docker-env)
+eval $(minikube -p minikube docker-env)  //用过之后还是拉不到本地image 最终用了远端的
 docker build -t myproject/myimage ./basic-express
 minikube start
 kubectl apply -f k8s/ (OR kubectl create deployment k8s-deployment --image=myproject/myimage)
@@ -133,9 +133,16 @@ kubectl delete cronjob --all
 How to delete a deployment by name:
 kubectl delete deployment k8s-deployment
 
+How to delete all ingress:
+kubectl delete ingress --all
+
 How to check deployment:
 kubectl get deployment
 
 How to check status of deployment:
 kubectl rollout status deployment/k8s-deployment
+```
+
+```shell
+minikube start --vm-driver=hyperkit
 ```

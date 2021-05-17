@@ -1,0 +1,19 @@
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: kubernetes-cron-job
+spec:
+  schedule: "*/1 * * * *"
+  jobTemplate:
+    spec:
+      template:
+        metadata:
+          labels:
+            app: cron-batch-job-call-api
+        spec:
+          restartPolicy: OnFailure
+          containers:
+            - name: kube-cron-job-call-api
+              image: coderjiajiema/k8simage:2.0
+              args:
+                - "http://petstore-demo-endpoint.execute-api.com/petstore/pets"
