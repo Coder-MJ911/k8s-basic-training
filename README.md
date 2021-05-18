@@ -144,5 +144,8 @@ kubectl rollout status deployment/k8s-deployment
 ```
 
 ```shell
-minikube start --vm-driver=hyperkit
+最终解决办法(使用docker desktop,minikube没有使用,理论上没问题):
+1. sudo vim /etc/hosts => insert '127.0.0.1 my.first.k8s.local'
+2. kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v0.46.0/deploy/static/provider/cloud/deploy.yaml
+3. kubectl apply -f /k8s/ingress-template.yml 
 ```

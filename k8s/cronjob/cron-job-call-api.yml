@@ -17,4 +17,4 @@ spec:
               imagePullPolicy: IfNotPresent
                 command:
                   - curl
-                  - "https://my.first.k8s.com/cornJob"
+                  - "http://my.first.k8s.com/cronJob"

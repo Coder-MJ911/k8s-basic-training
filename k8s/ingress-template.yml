@@ -4,7 +4,7 @@ metadata:
   name: my-ingress
 spec:
   rules:
-    - host: "my.first.k8s.com"
+    - host: "my.first.k8s.local"
       http:
         paths:
           - pathType: Prefix
